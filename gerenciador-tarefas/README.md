@@ -1,16 +1,95 @@
-# React + Vite
+# ✅ Gerenciador de Tarefas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de gerenciamento de tarefas desenvolvida com **React** e **Vite**, construída como projeto prático de estudo baseado na [playlist de React](https://www.youtube.com/watch?v=2RWsLmu8yVc&list=PL6YyfjqNRrpfucLuZemff08oDFbDHWqI-&index=58).
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📋 Sobre o Projeto
 
-## React Compiler
+O Gerenciador de Tarefas permite ao usuário adicionar, visualizar, concluir e remover tarefas de forma simples e intuitiva. O projeto foi desenvolvido com foco no aprendizado dos conceitos fundamentais do React moderno.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tecnologias Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- JavaScript (ES6+)
+- CSS
+
+---
+
+## ⚛️ Conceitos do React Estudados
+
+### 🔹 Componentes
+A interface é dividida em componentes reutilizáveis, como o formulário de adição de tarefas e a lista de tarefas, seguindo a filosofia de componentização do React.
+
+### 🔹 Props
+Os componentes se comunicam através de **props**, passando dados e funções entre componente pai e filho — por exemplo, a função de remoção de tarefa é passada como prop do componente pai para o item da lista.
+
+### 🔹 useState
+O hook `useState` é utilizado para gerenciar o estado local da aplicação, como a lista de tarefas e o valor do campo de input.
+
+```jsx
+const [tarefas, setTarefas] = useState([]);
+const [tarefa, setTarefa] = useState('');
+```
+
+### 🔹 Eventos
+Manipulação de eventos do DOM como `onChange`, `onSubmit` e `onClick` para capturar a digitação do usuário, envio do formulário e interação com as tarefas.
+
+### 🔹 Renderização de Listas
+Uso do método `.map()` para renderizar dinamicamente a lista de tarefas, com uso da prop `key` para identificação única de cada elemento.
+
+```jsx
+{tarefas.map((item) => (
+  <li key={item.id}>{item.texto}</li>
+))}
+```
+
+### 🔹 Renderização Condicional
+Exibição de mensagens ou elementos condicionalmente com base no estado — por exemplo, exibir uma mensagem quando não há tarefas cadastradas.
+
+---
+
+## ⚙️ Como Executar
+
+```bash
+# Clone o repositório
+git clone https://github.com/RaquelNeres/Vite-projects.git
+
+# Acesse a pasta do projeto
+cd Vite-projects/gerenciador-tarefas
+
+# Instale as dependências
+npm install
+
+# Inicie o servidor de desenvolvimento
+npm run dev
+```
+
+Acesse no navegador: `http://localhost:5173`
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+gerenciador-tarefas/
+├── public/
+├── src/
+│   ├── components/
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+├── index.html
+└── package.json
+```
+
+---
+
+## 🎓 Referência de Estudo
+
+Projeto desenvolvido com base no vídeo:
+[▶️ Curso de React - Aula 58](https://www.youtube.com/watch?v=2RWsLmu8yVc&list=PL6YyfjqNRrpfucLuZemff08oDFbDHWqI-&index=58)
+
