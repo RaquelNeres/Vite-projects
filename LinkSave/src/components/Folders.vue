@@ -27,7 +27,7 @@
       > <span>{{ title }}</span>
   
         <button 
-          class="hover:opacity-80 transition-opacity"
+          class="hover:opacity-80 transition-opacity cursor-pointer"
           @click="handleDelete"
         >
           <svg-icon style="color: red" type="mdi" :path="path" :size="24"></svg-icon>
