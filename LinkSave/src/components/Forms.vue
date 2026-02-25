@@ -56,7 +56,6 @@ function handleAddLink() {
             class="border border-slate-500 bg-[#374151] text-white p-2 rounded-lg w-full"
             />
             <input
-                required 
                 type="text"     
                 v-model="tags"
                 placeholder="Tags" 
@@ -75,7 +74,6 @@ function handleAddLink() {
                 <option @click="" value="novo">+ Criar pasta...</option>
             </select>
             <input
-                required 
                 type="text" 
                 v-model="description"
                 placeholder="Descrição" 

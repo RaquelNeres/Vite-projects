@@ -99,6 +99,7 @@ function handleEditLink(dadoEditado) {
       <MenuElements 
         class="ml-10 mt-5"
         :dados="state.dados"
+        :pastas="state.pastas"
         @edit-link="handleEditLink"
         @delete-link="handleDeleteLink"
       />
