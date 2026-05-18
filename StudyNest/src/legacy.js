@@ -1033,9 +1033,24 @@ export function renderNoteImages(containerId, imgs, isModal = false, noteId = nu
   }
   el.innerHTML = imgs
     .map(
-      (src, i) => `<div class="img-preview-item"><img src="${src}" alt=""><div class="remove-img" onclick="removeImage('${containerId}',${i},'${isModal ? 'modal' : ''}','${noteId || ''}')">✕</div></div>`,
+      (src, i) => `<div class="img-preview-item"><img src="${src}" alt="" onclick="openImagePreview('${encodeURIComponent(src)}')"><div class="remove-img" onclick="removeImage('${containerId}',${i},'${isModal ? 'modal' : ''}','${noteId || ''}')">✕</div></div>`,
     )
     .join('');
+}
+
+export function openImagePreview(encodedSrc) {
+  const src = decodeURIComponent(encodedSrc);
+  const preview = document.getElementById('image-preview-img');
+  const overlay = document.getElementById('image-preview-overlay');
+  if (preview) preview.src = src;
+  if (overlay) overlay.classList.add('open');
+}
+
+export function closeImagePreview() {
+  const overlay = document.getElementById('image-preview-overlay');
+  const preview = document.getElementById('image-preview-img');
+  if (overlay) overlay.classList.remove('open');
+  if (preview) preview.src = '';
 }
 
 export function removeImage(containerId, idx, ctx, noteId) {
@@ -1319,6 +1334,8 @@ const legacyGlobals = {
   handleImageUpload,
   renderNoteImages,
   removeImage,
+  openImagePreview,
+  closeImagePreview,
   confirmDelete,
   closeConfirm,
   handleSearch,

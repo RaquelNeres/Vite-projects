@@ -346,6 +346,13 @@
         </div>
       </div>
     </div>
+
+    <div class="img-preview-overlay" id="image-preview-overlay" onclick="closeImagePreview()">
+      <div class="img-preview-modal" onclick="event.stopPropagation()">
+        <button class="img-preview-close" onclick="closeImagePreview()">✕</button>
+        <img id="image-preview-img" src="" alt="Visualização de imagem" />
+      </div>
+    </div>
   </div>
 </template>
 
