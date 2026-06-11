@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    @apply bg-void text-white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-faint rounded-full;
+  }
+
+  input, select, textarea {
+    @apply bg-elevated border border-border rounded-xl px-4 py-3 text-white w-full outline-none;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    @apply border-flame;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface border border-border rounded-2xl p-4;
+  }
+
+  .card-elevated {
+    @apply bg-elevated border border-border rounded-2xl p-4;
+  }
+
+  .btn-primary {
+    @apply bg-flame hover:bg-orange-600 active:scale-95 text-white font-semibold rounded-xl px-6 py-3 transition-all duration-200 flex items-center justify-center gap-2;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .btn-secondary {
+    @apply bg-elevated hover:bg-faint active:scale-95 text-white font-medium rounded-xl px-6 py-3 transition-all duration-200 flex items-center justify-center gap-2 border border-border;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .btn-ghost {
+    @apply hover:bg-elevated active:scale-95 text-muted hover:text-white font-medium rounded-xl px-4 py-2 transition-all duration-200 flex items-center justify-center gap-2;
+  }
+
+  .stat-value {
+    @apply text-3xl font-bold text-white;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .stat-label {
+    @apply text-xs font-medium text-muted uppercase tracking-wider;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .section-title {
+    @apply text-lg font-bold text-white;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .pace-display {
+    font-family: 'JetBrains Mono', monospace;
+    @apply font-bold tabular-nums;
+  }
+
+  .flame-gradient {
+    background: linear-gradient(135deg, #FF4D1C 0%, #FF8F4F 100%);
+  }
+
+  .pr-badge {
+    @apply bg-amber-500 text-black text-xs font-bold px-2 py-0.5 rounded-full;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .tag {
+    @apply text-xs font-medium px-3 py-1 rounded-full border;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .page-container {
+    @apply max-w-lg mx-auto px-4 pb-28 pt-4 min-h-screen;
+  }
+
+  .page-header {
+    @apply flex items-center justify-between mb-6;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  .bottom-nav-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Page transition animations */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* Toast animation */
+@keyframes toastIn {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes toastOut {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(100px); opacity: 0; }
+}
+
+.toast-enter {
+  animation: toastIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.toast-leave {
+  animation: toastOut 0.3s ease-in forwards;
+}
+
+/* Number counter animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.count-up {
+  animation: countUp 0.5s ease-out forwards;
+}
+
+/* Flame glow effect */
+.flame-glow {
+  box-shadow: 0 0 20px rgba(255, 77, 28, 0.3);
+}
