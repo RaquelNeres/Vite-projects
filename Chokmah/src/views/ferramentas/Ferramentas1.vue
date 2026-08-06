@@ -25,7 +25,7 @@
             </p>
             <a class="flex" href="../ferramentas/sql">
                 <h2 class="text-[24px] mb-5">SQL</h2>
-                <img class="h-4 ml-2 mt-1" src="../../../img/docker.png" alt="">
+                <img class="h-4 ml-2 mt-1" src="/img/docker.png" alt="">
                 <p class="ml-4 text-[24px]">(Em Breve)</p>
             </a>
             <p class="text-[14px]">
@@ -39,7 +39,7 @@
             </p>
             <a class="flex" href="../ferramentas/markdown">
                 <h2 class="text-[24px] mb-5">Markdown</h2>
-                <img class="h-6 ml-2 mt-1" src="../../../img/markdown.png" alt="">
+                <img class="h-6 ml-2 mt-1" src="/img/markdown.png" alt="">
                 <p class="ml-4 text-[24px]">(Em Breve)</p>
             </a>
             <p class="text-[14px]">
@@ -49,10 +49,10 @@
 
         <div class="flex justify-between w-full mt-1 mb-10">
           <button @click="voltar" class="flex items-center">
-            <img src="../../../public/img/seta.png" alt="Anterior" />
+            <img src="/img/seta.png" alt="Anterior" />
           </button>
           <router-link to="" class="flex items-center">
-            <img class="-scale-x-100" src="../../../public/img/seta.png" alt="Próximo" />
+            <img class="-scale-x-100" src="/img/seta.png" alt="Próximo" />
           </router-link>
           
         </div>
