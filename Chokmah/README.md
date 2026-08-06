@@ -1,6 +1,4 @@
-# Chokmah
-
-This template should help get you started developing with Vue 3 in Vite.
+# [Chokmah](https://chokmah-jade.vercel.app/)
 
 ## Recommended IDE Setup
 
