@@ -1,10 +1,9 @@
 <template>
-  <nav id="sidebar" class="hidden md:block pl-5
-            fixed inset-y-0 left-0 z-40 w-[85%] max-w-[330px] h-full bg-[#131217] overflow-y-auto
-            md:relative md:h-[960px] md:ml-10 md:w-full md:bg-transparent md:overflow-visible
-            border-r border-[rgba(255,193,7,0.5)] py-[5%] shadow-2xl md:shadow-none transition-all duration-300">
-
-    <img class="rounded-full ml-9 mb-5 mt-6 h-[200px]" src="/img/blue.jpg" alt="profile" />
+  <nav id="sidebar" 
+       :class="[
+         showSidebar ? 'block' : 'hidden', 
+         'md:block pl-5 fixed inset-y-0 left-0 z-40 w-[85%] max-w-[330px] h-full bg-[#131217] overflow-y-auto md:relative md:h-[960px] md:ml-10 md:w-full md:bg-transparent md:overflow-visible border-r border-[rgba(255,193,7,0.5)] py-[5%] shadow-2xl md:shadow-none transition-all duration-300'
+       ]">
 
     <div class="text-left px-4">
       <h1 class="font-lobster text-[#d9d7e0] text-[36px] transition-all duration-300 ease-in-out hover:text-[#3c3c3c] hover:scale-105">
@@ -50,4 +49,8 @@
 </template>
 
 <script setup>
+import { inject } from 'vue'
+
+// Injetando o estado global do menu para que ele saiba quando abrir
+const showSidebar = inject('showSidebar')
 </script>

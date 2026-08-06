@@ -141,7 +141,10 @@
 </template>
 
 <script setup>
+import { inject } from 'vue'
 import { useRouter } from 'vue-router'
+
+const showSidebar = inject('showSidebar') || { value: false }
 
 const router = useRouter()
 const voltar = () => router.back()

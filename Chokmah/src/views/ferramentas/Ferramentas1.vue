@@ -1,5 +1,5 @@
 <template>
-  <div class="-apple-system bg-[#131217] text-base [zoom:1.1] min-h-screen">
+  <div class="-apple-system bg-[#131217] text-base min-h-screen">
     <div class="max-w-[1070px] mx-auto flex justify-between items-start">
 
       <img 
@@ -13,7 +13,7 @@
 
       <div class="text-[#D9D7E0] text-justify 
               grid gap-7 justify-between
-              max-w-[703px] mx-auto px-5 ml-8 mr-10   
+              max-w-[703px] mx-auto px-5 ml-2 mr-10   
           ">
         <h1 class="mt-16 text-[50px] mb-1">
             Ferramentas
@@ -23,9 +23,10 @@
             <p class="text-[12px] mb-1">
                 FEVEREIRO 2026
             </p>
-            <a class="flex" href="../ferramentas/sql.html">
+            <a class="flex" href="../ferramentas/sql">
                 <h2 class="text-[24px] mb-5">SQL</h2>
                 <img class="h-4 ml-2 mt-1" src="../../../img/docker.png" alt="">
+                <p class="ml-4 text-[24px]">(Em Breve)</p>
             </a>
             <p class="text-[14px]">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit nihil u
@@ -36,9 +37,10 @@
             <p class="text-[12px] mb-1">
                 FEVEREIRO 2026
             </p>
-            <a class="flex" href="">
+            <a class="flex" href="../ferramentas/markdown">
                 <h2 class="text-[24px] mb-5">Markdown</h2>
                 <img class="h-6 ml-2 mt-1" src="../../../img/markdown.png" alt="">
+                <p class="ml-4 text-[24px]">(Em Breve)</p>
             </a>
             <p class="text-[14px]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, voluptatum voluptatibus! Sunt voluptates minus est, voluptatum nostrum
@@ -46,9 +48,9 @@
         </div>
 
         <div class="flex justify-between w-full mt-1 mb-10">
-          <router-link to="/ferramentas" class="flex items-center">
+          <button @click="voltar" class="flex items-center">
             <img src="../../../public/img/seta.png" alt="Anterior" />
-          </router-link>
+          </button>
           <router-link to="" class="flex items-center">
             <img class="-scale-x-100" src="../../../public/img/seta.png" alt="Próximo" />
           </router-link>
@@ -62,6 +64,10 @@
 
 <script setup>
 import { inject } from 'vue'
+import { useRouter } from 'vue-router'
 
 const showSidebar = inject('showSidebar') || { value: false }
+
+const router = useRouter()
+const voltar = () => router.back()
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="bg-[#131217] min-h-screen [zoom:1.1]">
     <!-- Mobile sidebar overlay -->
-    <div v-if="showSidebar && showSidebarFlag" class="fixed inset-0 z-50 md:hidden">
+    <div v-if="showSidebar" class="fixed inset-0 z-50 md:hidden">
       <div class="absolute inset-0 bg-black/50" @click="showSidebar = false"></div>
       <div class="absolute left-0 top-0 bottom-0 w-4/5 max-w-[330px] bg-[#131217] overflow-auto">
         <Sidebar />
@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { ref, provide, computed } from 'vue'
+import { ref, provide, computed, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import Sidebar from './components/Sidebar.vue'
 
@@ -49,6 +49,13 @@ const showSidebarFlag = computed(() => {
   ]
   return !hiddenPaths.includes(route.path)
 })
+
+watch(
+  () => route.path,
+  () => {
+    showSidebar.value = false
+  }
+)
 
 provide('showSidebar', showSidebar)
 </script>
