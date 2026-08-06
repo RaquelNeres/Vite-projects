@@ -21,7 +21,6 @@
           <router-link class="flex" to="/backend/python">
               <h2 class="text-[24px] mb-5">Python</h2>
               <img class="h-5 ml-2 mt-1" src="../../public/img/python.png" alt="">
-              <p class="ml-4 text-[24px]">(Em Breve)</p>
           </router-link>
           <p class="text-[14px]">
               Codigos voltados para automação com python.
